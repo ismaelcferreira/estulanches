@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EstuLanches — Gestão de Cardápio e Pedidos da Cantina</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topo">
+  <div class="wrap topo-in">
+    <h1>🥪 EstuLanches <span>— Gestão de Cardápio e Pedidos da Cantina</span></h1>
+    <div id="saude" class="saude" role="status" aria-live="polite">
+      <span class="ponto"></span><span id="saudeTxt">Verificando…</span>
+    </div>
+  </div>
+</header>
+
+<nav class="wrap abas" role="tablist" aria-label="Seções">
+  <button role="tab" id="tab-pedido" class="ativa" aria-selected="true" aria-controls="aba-pedido">Fazer Pedido</button>
+  <button role="tab" id="tab-cozinha" aria-selected="false" tabindex="-1" aria-controls="aba-cozinha">Fila da Cozinha <span id="contFila" class="contador" hidden></span></button>
+  <button role="tab" id="tab-cardapio" aria-selected="false" tabindex="-1" aria-controls="aba-cardapio">Gerenciar Cardápio</button>
+</nav>
+
+<main class="wrap">
+  <section id="aba-pedido" class="pedido-layout" role="tabpanel" aria-labelledby="tab-pedido">
+    <div>
+      <h2>Cardápio</h2>
+      <div id="grid" class="grid"></div>
+    </div>
+    <aside class="carrinho" aria-label="Carrinho">
+      <h2>Seu pedido</h2>
+      <ul id="carrinho" class="lista-carrinho"></ul>
+      <div class="total"><span>Total</span><strong id="total">R$ 0,00</strong></div>
+      <label for="cliente">Nome do cliente</label>
+      <input id="cliente" maxlength="100" autocomplete="off" placeholder="Ex.: Ana Souza">
+      <button id="btnPedido" class="btn btn-grande" type="button" disabled>Enviar pedido</button>
+      <button id="btnLimpar" class="btn btn-ghost" type="button">Limpar carrinho</button>
+    </aside>
+  </section>
+
+  <section id="aba-cozinha" role="tabpanel" aria-labelledby="tab-cozinha" hidden>
+    <div class="titulo-linha">
+      <h2>Fila da Cozinha</h2>
+      <button id="btnAtualizar" class="btn btn-ghost" type="button">↻ Atualizar</button>
+    </div>
+    <div id="fila" class="fila"></div>
+  </section>
+
+  <section id="aba-cardapio" role="tabpanel" aria-labelledby="tab-cardapio" hidden>
+    <div class="duas-col">
+      <form id="formItem" class="cartao" novalidate>
+        <h2>Novo item</h2>
+        <label for="novoNome">Nome</label>
+        <input id="novoNome" maxlength="100" autocomplete="off" placeholder="Ex.: Bolo de cenoura">
+        <label for="novoPreco">Preço (R$)</label>
+        <input id="novoPreco" type="number" step="0.01" min="0.01" inputmode="decimal" placeholder="5,50">
+        <button class="btn btn-grande" type="submit">Cadastrar item</button>
+      </form>
+      <div class="cartao">
+        <h2>Itens cadastrados</h2>
+        <ul id="listaCardapio" class="lista-simples"></ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
