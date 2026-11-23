@@ -19,7 +19,7 @@ O **EstuLanches** é uma aplicação desenvolvida para facilitar o gerenciamento
 
 Confira o vídeo de apresentação e demonstração do EstuLanches:
 
-▶️ [**ASSISTIR À DEMONSTRAÇÃO NO YOUTUBE**](COLE_AQUI_O_LINK_DO_VIDEO)
+[![Assistir à demonstração do EstuLanches](https://img.youtube.com/vi/n1HyqXFuopw/maxresdefault.jpg)](https://www.youtube.com/watch?v=n1HyqXFuopw)
 
 ---
 
